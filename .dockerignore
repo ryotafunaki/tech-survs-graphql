@@ -1,0 +1,12 @@
+.git/
+.github/
+.vscode/
+charts/
+hooks/
+.dockerignore
+.editorconfig
+.gitattributes
+.gitignore
+docker-compose.yml
+Dockerfile
+README.md
