@@ -20,3 +20,12 @@ indent_size = 2
 
 [*.{yaml,yml}]
 indent_size = 2
+
+[*.prettierrc]
+indent_size = 2
+
+[*.{ts,tsx}]
+indent_size = 2
+
+[*.graphql]
+indent_size = 2

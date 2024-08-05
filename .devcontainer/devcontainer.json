@@ -2,7 +2,9 @@
 // This source code is managed under the MIT license. See LICENSE in the project root.
 {
   "name": "Node.js Dev Container",
-  "image": "ryotafunaki/devcontainer-nodejs:sdk-20",
+  "dockerComposeFile": "./docker-compose.yml",
+  "service": "develop",
+  "workspaceFolder": "/workspace",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -19,7 +21,12 @@
         "eamodio.gitlens",
         "ms-vscode.vscode-typescript-next",
         "redhat.vscode-xml",
-        "redhat.vscode-yaml"
+        "redhat.vscode-yaml",
+        "GraphQL.vscode-graphql",
+        "GraphQL.vscode-graphql-syntax",
+        "esbenp.prettier-vscode",
+        "apollographql.vscode-apollo",
+        "apollographql.apollo-workbench"
       ]
     }
   }
