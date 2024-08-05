@@ -1,0 +1,13 @@
+dist/
+node_modules/
+.vscode/
+.vs/
+
+**/*.log
+**/.*.log
+
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local

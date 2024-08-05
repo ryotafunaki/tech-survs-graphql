@@ -1,37 +1,58 @@
-# Node.js Project Repository
+# GraphQL Technical Survey Repository
 
-This repository is a Node.js Project.
+This repository is a technical survey of the GraphQL.
 
 ## Overview
 
 ## Requirements
 
-## Container image info
+- Node.js 20.x
 
 ## How to use
 
 ### Execution on local machine
 
-1.  Start the application
-    ```bash
-    npm run
-    ```
+1. Set the environment variables or create the '.env' file
 
-### Execution on Docker
+   | Name       | Description                             | Value |
+   | ---------- | --------------------------------------- | ----- |
+   | CACHE_HOST | The host name or IP of the cache server | redis |
+   | CACHE_PORT | The port number of the cache server     | 6379  |
 
-1.  Start the application
-    ```bash
-    docker compose up -d
-    ```
+1. Install the dependencies
 
-### Execution on Kubernetes
+   ```bash
+   yarn install
+   ```
 
-1. Register the Helm repository
-    ```bash
-    helm repo add rfull-development http://charts.ngv.jp
-    helm repo update
-    ```
-1. Deploy the application
-    ```bash
-    helm install rfull-development/<release-name> --namespace <namespace> --create-namespace
-    ```
+1. Start the application with development mode
+
+   ```bash
+   yarn run start:dev
+   ```
+
+1. Accessing http://localhost:3000/graphql
+1. Execute the following queries and mutations on the GraphQL playground
+
+   ```graphql
+   mutation NewItem {
+     createItem
+   }
+
+   query ItemList {
+     items {
+       id
+       value
+     }
+   }
+   ```
+
+## How to maintain
+
+### Modify the GraphQL schema
+
+1. Modify the 'src/\*_/_.graphql' files
+1. Regenerate the 'src/graphql.schema.ts' file
+   ```bash
+   yarn run generate
+   ```
