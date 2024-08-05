@@ -17,7 +17,6 @@ const nodeRedisClientFactory: FactoryProvider<NodeRedisClientType> = {
       },
     })
     client.connect()
-    console.log('Redis client created')
     return client
   },
 }
