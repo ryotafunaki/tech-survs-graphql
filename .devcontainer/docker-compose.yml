@@ -1,0 +1,20 @@
+# Copyright (c) 2024 RFull Development
+# This source code is managed under the MIT license. See LICENSE in the project root.
+services:
+  redis:
+    image: redis:7-bookworm
+    hostname: redis
+    restart: unless-stopped
+    ports:
+      - 6379:6379
+  redisinsight:
+    image: redis/redisinsight:latest
+    hostname: redisinsight
+    restart: unless-stopped
+    ports:
+      - 5540:5540
+  develop:
+    image: ryotafunaki/devcontainer-nodejs:sdk-20-nest
+    tty: true
+    volumes:
+      - ..:/workspace:cached
